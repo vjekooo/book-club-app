@@ -1,4 +1,4 @@
-package com.jetbrains.bookClub.data
+package com.jetbrains.bookClub.data.bookClub.bookClub
 
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body

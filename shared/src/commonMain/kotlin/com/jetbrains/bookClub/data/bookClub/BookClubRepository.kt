@@ -1,4 +1,4 @@
-package com.jetbrains.bookClub.data
+package com.jetbrains.bookClub.data.bookClub.bookClub
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob

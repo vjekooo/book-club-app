@@ -1,10 +1,15 @@
 package com.jetbrains.bookClub.di
 
-import com.jetbrains.bookClub.data.InMemoryBookClubStorage
-import com.jetbrains.bookClub.data.KtorBookClubApi
-import com.jetbrains.bookClub.data.BookClubApi
-import com.jetbrains.bookClub.data.BookClubRepository
-import com.jetbrains.bookClub.data.BookClubStorage
+import com.jetbrains.bookClub.data.auth.AuthApi
+import com.jetbrains.bookClub.data.auth.AuthRepository
+import com.jetbrains.bookClub.data.auth.KtorAuthApi
+import com.jetbrains.bookClub.data.bookClub.auth.AuthStorage
+import com.jetbrains.bookClub.data.bookClub.auth.InMemoryAuthStorage
+import com.jetbrains.bookClub.data.bookClub.bookClub.InMemoryBookClubStorage
+import com.jetbrains.bookClub.data.bookClub.bookClub.KtorBookClubApi
+import com.jetbrains.bookClub.data.bookClub.bookClub.BookClubApi
+import com.jetbrains.bookClub.data.bookClub.bookClub.BookClubRepository
+import com.jetbrains.bookClub.data.bookClub.bookClub.BookClubStorage
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.http.ContentType
@@ -29,6 +34,13 @@ val dataModule = module {
     single<BookClubStorage> { InMemoryBookClubStorage() }
     single {
         BookClubRepository(get(), get()).apply {
+            initialize()
+        }
+    }
+    single<AuthApi> { KtorAuthApi(get()) }
+    single<AuthStorage> { InMemoryAuthStorage() }
+    single {
+        AuthRepository(get(), get()).apply {
             initialize()
         }
     }

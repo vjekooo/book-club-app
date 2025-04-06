@@ -1,4 +1,4 @@
-package com.jetbrains.bookClub.data
+package com.jetbrains.bookClub.data.bookClub.bookClub
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow

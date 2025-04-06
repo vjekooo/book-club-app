@@ -1,7 +1,7 @@
-package com.jetbrains.bookClub.screens
+package com.jetbrains.bookClub.screens.bookClub
 
-import com.jetbrains.bookClub.data.BookClubObject
-import com.jetbrains.bookClub.data.BookClubRepository
+import com.jetbrains.bookClub.data.bookClub.bookClub.BookClubObject
+import com.jetbrains.bookClub.data.bookClub.bookClub.BookClubRepository
 import com.rickclephas.kmp.observableviewmodel.ViewModel
 import com.rickclephas.kmp.observableviewmodel.stateIn
 import com.rickclephas.kmp.nativecoroutines.NativeCoroutinesState

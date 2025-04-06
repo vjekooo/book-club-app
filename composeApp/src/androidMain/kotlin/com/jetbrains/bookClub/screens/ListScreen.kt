@@ -28,7 +28,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
-import com.jetbrains.bookClub.data.BookClubObject
+import com.jetbrains.bookClub.data.bookClub.bookClub.BookClubObject
+import com.jetbrains.bookClub.screens.bookClub.ListViewModel
 import org.koin.androidx.compose.koinViewModel
 
 @Composable

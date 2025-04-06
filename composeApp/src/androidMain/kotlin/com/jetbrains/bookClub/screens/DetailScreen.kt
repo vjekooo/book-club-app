@@ -37,9 +37,10 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
-import com.jetbrains.bookClub.data.BookClubObject
+import com.jetbrains.bookClub.data.bookClub.bookClub.BookClubObject
 import org.koin.androidx.compose.koinViewModel
 import com.jetbrains.bookClub.R
+import com.jetbrains.bookClub.screens.bookClub.DetailViewModel
 
 @Composable
 fun DetailScreen(objectId: Int, navigateBack: () -> Unit) {
