@@ -1,7 +1,6 @@
 package com.jetbrains.bookClub.data.auth
 
 import com.jetbrains.bookClub.data.bookClub.auth.AuthObject
-import com.jetbrains.bookClub.data.bookClub.auth.AuthStorage
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.Flow

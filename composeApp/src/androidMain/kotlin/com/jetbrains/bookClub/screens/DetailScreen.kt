@@ -40,11 +40,11 @@ import coil3.compose.AsyncImage
 import com.jetbrains.bookClub.data.bookClub.bookClub.BookClubObject
 import org.koin.androidx.compose.koinViewModel
 import com.jetbrains.bookClub.R
-import com.jetbrains.bookClub.screens.bookClub.DetailViewModel
+import com.jetbrains.bookClub.screens.bookClub.BookClubDetailViewModel
 
 @Composable
 fun DetailScreen(objectId: Int, navigateBack: () -> Unit) {
-    val viewModel: DetailViewModel = koinViewModel()
+    val viewModel: BookClubDetailViewModel = koinViewModel()
     val obj by viewModel.museumObject.collectAsStateWithLifecycle()
 
     LaunchedEffect(objectId) {

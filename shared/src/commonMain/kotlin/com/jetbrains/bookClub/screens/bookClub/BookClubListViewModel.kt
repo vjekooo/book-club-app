@@ -8,7 +8,7 @@ import com.rickclephas.kmp.nativecoroutines.NativeCoroutinesState
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 
-class ListViewModel(bookClubRepository: BookClubRepository) : ViewModel() {
+class BookClubListViewModel(bookClubRepository: BookClubRepository) : ViewModel() {
     @NativeCoroutinesState
     val objects: StateFlow<List<BookClubObject>> =
         bookClubRepository.getObjects()

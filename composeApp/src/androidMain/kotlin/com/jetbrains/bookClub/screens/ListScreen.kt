@@ -29,12 +29,12 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
 import com.jetbrains.bookClub.data.bookClub.bookClub.BookClubObject
-import com.jetbrains.bookClub.screens.bookClub.ListViewModel
+import com.jetbrains.bookClub.screens.bookClub.BookClubListViewModel
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun ListScreen(navigateToDetails: (objectId: Int) -> Unit) {
-    val viewModel: ListViewModel = koinViewModel()
+    val viewModel: BookClubListViewModel = koinViewModel()
     val objects by viewModel.objects.collectAsStateWithLifecycle()
 
     AnimatedContent(objects.isNotEmpty()) { objectsAvailable ->

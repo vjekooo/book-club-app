@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flowOf
 
-class DetailViewModel(private val bookClubRepository: BookClubRepository) : ViewModel() {
+class BookClubDetailViewModel(private val bookClubRepository: BookClubRepository) : ViewModel() {
     private val objectId = MutableStateFlow<Int?>(null)
 
     @OptIn(ExperimentalCoroutinesApi::class)

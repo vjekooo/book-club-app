@@ -3,8 +3,8 @@ package com.jetbrains.bookClub.di
 import com.jetbrains.bookClub.data.auth.AuthApi
 import com.jetbrains.bookClub.data.auth.AuthRepository
 import com.jetbrains.bookClub.data.auth.KtorAuthApi
-import com.jetbrains.bookClub.data.bookClub.auth.AuthStorage
-import com.jetbrains.bookClub.data.bookClub.auth.InMemoryAuthStorage
+import com.jetbrains.bookClub.data.auth.AuthStorage
+import com.jetbrains.bookClub.data.auth.InMemoryAuthStorage
 import com.jetbrains.bookClub.data.bookClub.bookClub.InMemoryBookClubStorage
 import com.jetbrains.bookClub.data.bookClub.bookClub.KtorBookClubApi
 import com.jetbrains.bookClub.data.bookClub.bookClub.BookClubApi

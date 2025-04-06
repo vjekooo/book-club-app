@@ -2,8 +2,8 @@ package com.jetbrains.bookClub
 
 import android.app.Application
 import com.jetbrains.bookClub.di.initKoin
-import com.jetbrains.bookClub.screens.bookClub.DetailViewModel
-import com.jetbrains.bookClub.screens.bookClub.ListViewModel
+import com.jetbrains.bookClub.screens.bookClub.BookClubDetailViewModel
+import com.jetbrains.bookClub.screens.bookClub.BookClubListViewModel
 import org.koin.dsl.module
 
 class BookClubApp : Application() {
@@ -12,8 +12,8 @@ class BookClubApp : Application() {
         initKoin(
             listOf(
                 module {
-                    factory { ListViewModel(get()) }
-                    factory { DetailViewModel(get()) }
+                    factory { BookClubListViewModel(get()) }
+                    factory { BookClubDetailViewModel(get()) }
                 }
             )
         )

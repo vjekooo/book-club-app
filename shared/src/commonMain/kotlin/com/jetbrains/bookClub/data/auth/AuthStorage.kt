@@ -1,8 +1,8 @@
-package com.jetbrains.bookClub.data.bookClub.auth
+package com.jetbrains.bookClub.data.auth
 
+import com.jetbrains.bookClub.data.bookClub.auth.AuthObject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.map
 
 interface AuthStorage {
     suspend fun saveObjects(newObjects: List<AuthObject>)
