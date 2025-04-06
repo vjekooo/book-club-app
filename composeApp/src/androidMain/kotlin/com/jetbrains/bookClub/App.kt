@@ -11,8 +11,16 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.jetbrains.bookClub.screens.DetailScreen
+import com.jetbrains.bookClub.screens.HomeScreen
 import com.jetbrains.bookClub.screens.ListScreen
+import com.jetbrains.bookClub.screens.LoginScreen
 import kotlinx.serialization.Serializable
+
+@Serializable
+object HomeDestination
+
+@Serializable
+object LoginDestination
 
 @Serializable
 object ListDestination
@@ -27,7 +35,17 @@ fun App() {
     ) {
         Surface {
             val navController = rememberNavController()
-            NavHost(navController = navController, startDestination = ListDestination) {
+            NavHost(navController = navController, startDestination = HomeDestination) {
+                composable<HomeDestination> {
+                    HomeScreen(
+                        onNavigateToList = {
+                            navController.navigate(ListDestination) {
+                                popUpTo(HomeDestination) { inclusive = true }
+                            }
+                        }
+
+                    )
+                }
                 composable<ListDestination> {
                     ListScreen(navigateToDetails = { objectId ->
                         navController.navigate(DetailDestination(objectId))

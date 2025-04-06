@@ -1,5 +1,6 @@
 package com.jetbrains.bookClub
 
+import LoginViewModel
 import android.app.Application
 import com.jetbrains.bookClub.di.initKoin
 import com.jetbrains.bookClub.screens.bookClub.BookClubDetailViewModel
@@ -14,6 +15,7 @@ class BookClubApp : Application() {
                 module {
                     factory { BookClubListViewModel(get()) }
                     factory { BookClubDetailViewModel(get()) }
+                    factory { LoginViewModel(get()) }
                 }
             )
         )

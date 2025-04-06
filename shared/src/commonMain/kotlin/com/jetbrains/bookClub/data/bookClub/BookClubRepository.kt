@@ -19,7 +19,6 @@ class BookClubRepository(
 
     private suspend fun refresh() {
         val data = bookClubApi.getData()
-        println(data)
         bookClubStorage.saveObjects(data)
     }
 

@@ -1,6 +1,5 @@
 package com.jetbrains.bookClub.data.auth
 
-import com.jetbrains.bookClub.data.bookClub.auth.AuthObject
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.Flow
@@ -14,15 +13,25 @@ class AuthRepository(
 
     fun initialize() {
         scope.launch {
-            refresh()
+//            refresh()
         }
     }
 
-    private suspend fun refresh() {
-        val data = api.getData()
-        println(data)
-        storage.saveObjects(data)
+    suspend fun onLoginClick(username: String, password: String) {
+        val data = api.login(username, password)
+        data.getOrElse {
+            println("Error during login: ${it.message}")
+            return
+        }.let { loginResponse ->
+            storage.saveObjects(loginResponse)
+        }
     }
 
-    fun getObjects(): Flow<List<AuthObject>> = storage.getObjects()
+    //    private suspend fun refresh() {
+//        val data = api.login()
+//        println(data)
+//        storage.saveObjects(data)
+//    }
+//
+    fun getObjects(): Flow<LoginResponse> = storage.getObjects()
 }
